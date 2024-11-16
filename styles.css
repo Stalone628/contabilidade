@@ -1,0 +1,335 @@
+/* Root for color palette */
+:root {
+    --color1: #002135;
+    --color2: #004462;
+    --color3: #b9d7e0;
+    --color4: #00afda;
+    --color5: #00f8ff;
+    --text-secondary: rgba(24, 4, 4, 0.7);
+    --focus-color: rgba(0, 179, 216, 0.5); /* Adicionando uma cor de foco */
+    --primary-color: #0d09e5; /* Cor principal estilo Netflix */
+    --primary-dark: #b3aae9; /* Cor mais escura para o efeito hover */
+    --text-color: #050000; /* Cor do texto */
+}
+
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: url('imagen/contabil.png') no-repeat center center fixed;
+    background-size: cover;
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+
+    /* Fundo com gradiente e efeito de desfoque para um visual futurista */
+    background: linear-gradient(135deg, rgba(233, 238, 241, 0.8), rgba(184, 226, 245, 0.8));
+    box-shadow: 0 4px 10px rgba(137, 164, 236, 0.4);
+    backdrop-filter: blur(10px); /* Desfoque no fundo */
+}
+
+.header .logo {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text-color);
+
+    /* Brilho neon na logo */
+    text-shadow: 0px 0px 5px var(--primary-color), 0px 0px 10px var(--primary-dark);
+}
+
+.header .logo span {
+    color: var(--primary-color);
+
+    /* Mesma sombra neon aplicada à parte destacada da logo */
+    text-shadow: 0px 0px 5px var(--primary-color), 0px 0px 10px var(--primary-dark);
+}
+
+.header nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-weight: 500;
+
+    /* Animação para a cor e leve efeito de movimento ao passar o mouse */
+    transition: color 0.3s, transform 0.3s;
+    position: relative;
+}
+
+/* Linha animada que aparece embaixo do link ao passar o mouse */
+.header nav a::before {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+
+    /* Transição para fazer a linha se expandir da metade do link */
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.header nav a:hover::before {
+    width: 100%;  /* A linha cobre o link inteiro ao passar o mouse */
+    left: 0;
+}
+
+.header nav a:hover {
+    color: var(--primary-color);  /* Cor muda ao passar o mouse */
+    transform: translateY(-2px);  /* Efeito de leve flutuação */
+}
+
+.header .login {
+    font-weight: 500;
+    color: var(--text-secondary);
+    cursor: pointer;
+    
+    /* Animação para cor e escala */
+    transition: color 0.3s, transform 0.3s;
+}
+
+.header .login:hover {
+    color: var(--primary-color);  /* Muda a cor ao passar o mouse */
+    transform: scale(1.1);        /* Aumenta levemente o tamanho */
+}
+
+.header .btn {
+    padding: 12px 25px;
+
+    /* Gradiente para o fundo do botão */
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: var(--text-color);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+
+    /* Sombras neon e transição para efeitos de movimento e cor */
+    box-shadow: 0px 0px 10px var(--primary-color), 0px 0px 20px var(--primary-dark);
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+/* Efeito visual ao passar o mouse no botão */
+.header .btn:hover {
+    /* Inverte o gradiente */
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+    
+    /* Aumenta o brilho e eleva o botão */
+    box-shadow: 0px 0px 20px var(--primary-dark), 0px 0px 40px var(--primary-color);
+    transform: translateY(-3px);
+}
+
+
+/* Main Content */
+.main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px 40px;
+    min-height: 80vh;
+}
+
+
+
+/* Estilo geral para a imagem */
+.image img {
+    width: 100%; /* Garante que a imagem ocupe o espaço do contêiner */
+    max-width: 500px; /* Define um tamanho máximo para imagens grandes */
+    height: auto; /* Mantém as proporções */
+    margin: 0 auto; /* Centraliza no contêiner */
+    border-radius: 20px; /* Bordas arredondadas */
+    box-shadow: 0 10px 30px rgba(75, 68, 68, 0.925); /* Sombra para destaque */
+    border: 5px solid rgba(255, 255, 255, 0.3); /* Borda translúcida */
+    object-fit: cover; /* Ajusta a imagem ao contêiner */
+}
+
+
+.main .content h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--text-color);
+    text-shadow: 2px 2px 10px rgba(75, 64, 64, 0.945);
+}
+
+.main .content h1 span {
+    color: var(--primary-color);
+}
+
+.main .content ul li i {
+    color: var(--primary-color);
+    margin-right: 15px;
+}
+
+/* Botões Estilizados */
+
+/* Botão Principal */
+.main .content .buttons{
+    display: flex;
+    justify-content: flex-start;
+    gap: 30px;
+
+}
+.main .content .buttons .btn-primary {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 50px; /* Arredonda o botão */
+    padding: 15px 35px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra para destaque */
+}
+
+/* Efeito Hover para Botão Principal */
+.main .content .buttons .btn-primary:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Sombra mais intensa ao passar o mouse */
+}
+
+/* Botão Secundário */
+.main .content .buttons .btn-secondary {
+    background-color: red;
+    color: #1a1a1a;
+    border: 2px solid var(--text-color);
+    border-radius: 50px;
+    padding: 15px 35px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 8px rgb(68, 66, 66);
+}
+
+/* Efeito Hover para Botão Secundário */
+.main .content .buttons .btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.9); /* Leve mudança de cor no hover */
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Chat Icon */
+.chat-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 24px;
+    transition: background-color 0.3s;
+}
+
+.chat-icon:hover {
+    background-color: var(--primary-dark);
+}
+
+.chat-icon:active {
+    transform: scale( 0.95); /* Efeito de clique */
+}
+/* Slider de imagens (novos estilos) */
+.image-slider {
+    width: 100%; /* O slider ocupa toda a largura disponível */
+    max-width: 600px; /* Limita o tamanho máximo do slider */
+    margin: 20px auto; /* Centraliza o slider */
+    text-align: center; /* Centraliza o conteúdo */
+}
+
+.image-slider img {
+    width: 100%; /* A imagem ocupa toda a largura do slider */
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
+    transition: opacity 1s ease-in-out; /* Efeito suave de transição */
+    opacity: 1; /* Define a opacidade inicial */
+}
+/* ========================
+   Estilos Padrão (Desktop)
+   ======================== */
+   .main .content {
+    padding: 40px;
+    font-size: 18px;
+    /* Outros estilos padrão */
+}
+
+/* =======================
+   Media Queries Responsivas
+   ======================= */
+
+/* --------- Tablets (tela média) --------- */
+@media (max-width: 768px) {
+    .main .content {
+        padding: 20px;
+        font-size: 16px;
+        /* Outros ajustes específicos para tablet */
+    }
+    .main .image {
+        width: 100%;
+        margin-top: 20px;
+    }
+}
+
+/* --------- Smartphones (tela pequena) --------- */
+@media (max-width: 480px) {
+    .main .content {
+        padding: 10px;
+        font-size: 14px;
+        text-align: center;
+    }
+    .header {
+        flex-direction: column;
+        padding: 10px;
+    }
+    .header nav a {
+        margin: 10px 0;
+    }
+    .main .image img {
+        border-radius: 15px; /* Menor arredondamento para telas pequenas */
+    }
+}
+/* Para telas de tablet (max-width: 768px) */
+@media (max-width: 768px) {
+    .main {
+        flex-direction: column; /* Muda para coluna */
+        padding: 40px 20px; /* Reduz o padding */
+        align-items: center; /* Centraliza os itens */
+    }
+}
+
+/* Para telas de smartphone (max-width: 480px) */
+@media (max-width: 480px) {
+    .main {
+        padding: 20px 10px; /* Reduz o padding ainda mais */
+        text-align: center; /* Centraliza o texto para uma boa leitura */
+    }
+}
+/* Media Query para tablets (telas médias) */
+@media (max-width: 768px) {
+    .image img {
+        max-width: 300px; /* Tamanho menor para dispositivos menores */
+    }
+}
+
+/* Media Query para smartphones (telas pequenas) */
+@media (max-width: 480px) {
+    .image img {
+        max-width: 200px; /* Reduz ainda mais o tamanho em telas pequenas */
+    }
+}

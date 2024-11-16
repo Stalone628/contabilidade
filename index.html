@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Consultoria Express</title>
+    
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            Consultoria Express <span>10 ANOS</span>
+        </div>
+        <nav class="nav">
+            <a href="#">SERVIÇOS</a>
+            <a href="#">PLANOS</a>
+            <a href="#">CONTEÚDOS</a>
+            <a href="#">COMO FUNCIONA</a>
+        </nav>
+        <div class="login">LOGIN</div>
+        <button class="btn">ABRIR EMPRESA</button>
+    </header>
+    <main class="main">
+        <div class="content">
+            <h1>Da abertura do CNPJ até a gestão contábil, conte com a gente<span>.</span></h1>
+            <ul>
+                <li><i class="fas fa-check"></i>Planos de acordo com o seu perfil</li>
+                <li><i class="fas fa-check"></i>Assessores especialistas no segmento do seu negócio</li>
+                <li><i class="fas fa-check"></i>Você escolhe como quer ser atendido: por telefone, WhatsApp, chat ou e-mail</li>
+                <li><i class="fas fa-check"></i>Sua empresa 100% regularizada e pagando o mínimo de impostos!</li>
+            </ul>
+            <div class="buttons">
+                <button class="btn btn-primary">ABRA SUA EMPRESA GRÁTIS</button>
+                <button class="btn btn-secondary">TROQUE DE CONTADOR</button>
+            </div>
+        </div>
+        <div class="image">
+            <img alt="logo da Consultoria 10 anos" src="/imagen/academicos.jpg" />
+            <div class="overlay">Consultoria Express 10 ANOS</div>
+            <div class="text">
+                <p><span>Simplificando</span> a vida de quem empreende no Brasil.</p>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Adicionando o Slider -->
+    <div class="image-slider">
+        <img id="dynamic-image" src="imagen/cont1.jpeg" alt="Contabilidade">
+        
+    </div>
+    
+    <div class="chat-icon">
+        <i class="fas fa-comment"></i>
+    </div>
+
+    <!-- Script para alternar imagens -->
+    <script>
+        const imagen = [
+            'imagen/cont1.jpeg',
+            'imagen/cont2.jpeg',
+            'imagen/cont3.jpeg'
+        ];
+        let currentIndex = 0;
+
+        function changeImage() {
+            const imageElement = document.getElementById('dynamic-image');
+            currentIndex = (currentIndex + 1) % imagen.length; // Avança para a próxima imagem
+            imageElement.style.opacity = 0; // Animação de saída
+
+            setTimeout(() => {
+                imageElement.src = imagen[currentIndex];
+                imageElement.style.opacity = 1; // Animação de entrada
+            }, 1000); // Delay para trocar a imagem
+        }
+
+        // Alterne as imagens a cada 5 segundos
+        setInterval(changeImage, 5000);
+    </script>
+</body>
+</html>
